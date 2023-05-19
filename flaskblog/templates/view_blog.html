@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='css/view_blog.css') }}" rel="stylesheet">
+  
+{% endblock css %}
+{% block body %}
+
+<div class="container">
+    <section>
+        <h1 class="blogheading">{{ post.title }}</h1>
+        <span class="blogauthor"> Author: <a href="{{ url_for('users.user_profile', name=post.author.name) }}"> {{post.author.name}}</a> </span> <br>
+        <span style="margin-left: 30px;">Posted on {{post.date_posted.strftime('%d-%m-%y') }}</span> <br>
+        <div class="container" style="justify-content: center; display:flex; margin-top:40px; margin-bottom:40px;">
+            <img src="https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2023/03/720/405/ChatGPT.jpg?ve=1&tl=1" width="780" height="470">
+        </div>
+        <div class="blogcontent" style="word-wrap: break-word;white-space: pre-wrap; display:flex;">{{ post.content }}</div>
+    </section>
+
+    {% if current_user.name == post.author.name %}
+    <div class="delupdate">
+        <a href="{{ url_for('posts.update_blog', post_id=post.id)}}" class="btn btn-dark btn " style="margin-right: 30px; margin-left: 7px;">Update</a>
+        <button type="button" class="btn btn-danger btn m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Post?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form action="{{ url_for('posts.delete_blog', post_id=post.id )}}" method="POST">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+    
+{% endblock body %}
+

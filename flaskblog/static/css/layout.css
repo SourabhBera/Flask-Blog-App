@@ -1,0 +1,42 @@
+
+a {
+	outline: none;
+}
+
+li{
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.navbar-brand{
+    font-size: 24px;
+    font-weight: 450;
+}
+
+.navbar-collapse ul li .underline {
+	height: 3px;
+	background-color: transparent;
+	width: 0%;
+	transition: width 0.2s, background-color 0.5s;
+	margin: 0 auto;
+}
+
+.navbar-collapse ul li.active-link .underline {
+	width: 100%;
+	background-color: #E06469;
+}
+
+.navbar-collapse ul li:hover .underline {
+	background-color: #E06469;
+	width: 100%;
+}
+
+.navbar-collapse ul li:active a {
+	transition: none;
+	color: #E06469;
+}
+
+.navbar-collapse ul li:active .underline {
+	transition: none;
+	background-color: #E06469;
+}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='css/account.css') }}" rel="stylesheet">
+{% endblock css %}
+
+{% block body %}
+<div class="container"> 
+
+    
+    <div class="main-container" id="main-contanier">
+        <div class="container-media">         
+                <img src="{{ image_file }}" class="rounded float-start img-fluid" id="profile-img" alt="profile picture" >
+            <div>
+                <h1 class="headname" >{{ user.name}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-container" >
+        <table class="styled-table">
+            
+            <thead>
+                <tr>
+                    <th style="padding-left: 40px; padding-right:40px;">Sr. No</th>
+                    <th style="padding-left: 40px; padding-right:40px;">Blog Title</th>
+                    <th style="padding-left: 40px; padding-right:40px;">Date Posted</th>
+                    <th style="padding-left: 40px; padding-right:40px;">View</th>
+                   
+                </tr>
+            </thead>
+
+            <tbody>                        
+                {% for post in posts %}
+                    <tr>
+                        <td style="padding-left: 40px; padding-right:40px;">#</td>
+                        <td style="padding-left: 30px; padding-right:30px; " class=" blogname">{{ post.title }}</td>
+                        <td style="padding-left: 40px; padding-right:40px;">{{ post.date_posted.strftime('%d-%m-%y') }}</td>
+                        <td style="padding-left: 40px; padding-right:40px;"><a href="{{ url_for('posts.view_blog', post_id=post.id)}}" class="btn btn-primary" >View</a></td>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+{% endblock body %}

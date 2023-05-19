@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block css %}
+<link href="{{ url_for('static', filename='css/new_blog_post.css') }}" rel="stylesheet">
+{% endblock css %}
+{% block body %}
+<div class="d-flex align-items-center justify-content-center">
+    <div class="wrap" style="padding:20px; margin:20px; width:700px;">
+        <h2 style="text-align: center; margin-bottom: 45px;">Create New Blog</h2>
+
+        <form action="/new/blogpost" method="post">
+            {{form.csrf_token }}
+
+            <div class="mb-5">
+                {{form.title.label(class="form-label") }}
+
+                {% if form.title.errors %}
+                {{form.title(class='is-invalid')}}
+                <div class="invalid-feedback" style="font-size: 13px;">
+                    {% for error in form.title.errors %}
+                    <span>{{ error }}</span><br>
+                    {% endfor %}
+                </div><br><br>
+                {% else %}
+                {{form.title (class="form-control")}}
+                {% endif %}
+
+            </div>
+
+            <div class="mb-5">
+                {{form.content.label(class="form-label") }}
+
+                {% if form.content.errors %}
+                {{form.content(class='is-invalid')}}
+                <div class="invalid-feedback" style="font-size: 13px;">
+                    {% for error in form.content.errors %}
+                    <span>{{ error }}</span><br>
+                    {% endfor %}
+                </div><br><br>
+                {% else %}
+                {{form.content (class="form-control2")}}
+                {% endif %}
+            </div>
+
+            <div >
+                {{form.blog_image.label(class="form-label") }} <br>
+                {{form.blog_image(class="form-control-file") }}
+
+                {% if form.blog_image.errors %}
+                        {% for error in form.blog_image.errors %}
+                            <span class="text-danger">{{ error }}</span><br>
+                        {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="input-box button" style="margin-top:17px; height: 50px;">
+                <input type="Submit" value="Post New Blog">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock body %}

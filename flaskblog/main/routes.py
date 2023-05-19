@@ -1,0 +1,31 @@
+from flask import render_template, request, Blueprint, url_for
+from flaskblog.models import Post
+from flaskblog.posts.routes import view_blog
+
+main = Blueprint('main', __name__)
+
+
+
+@main.route("/")
+@main.route("/home")
+def home():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=6)
+    vector1 = url_for('static', filename='profile_pics/vector1.jpg')
+    vector2 = url_for('static', filename='profile_pics/vector2.png')
+    return render_template('home.html', posts = posts, vector1=vector1, vector2=vector2)
+
+
+
+@main.route("/about")
+def about():
+    return render_template('about.html', title='About')
+
+
+@main.route("/search", methods=('GET', 'POST'))
+def search():
+    if request.method == 'POST':
+        search = request.form['search']
+        search_data = Post.query.filter_by(title=search).first_or_404()
+        
+        return render_template('view_blog.html', post=search_data)

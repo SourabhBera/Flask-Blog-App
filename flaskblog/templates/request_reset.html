@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="registerbody">
+    <div class="wrapper">
+        <h2>Request Reset</h2>
+        <form action="/request_reset" method="post">
+            {{form.csrf_token }}
+            
+            <div class="input-box">
+                {{form.email.label }}
+
+                {% if form.email.errors %}
+                    {{form.email(class='is-invalid')}}
+                    <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    {{form.email}}
+                {% endif %}
+            </div>
+
+            <div class="input-box button" style=" margin-bottom:10px;">
+                <input type="Submit" value="Reset" style="margin-top: -10px;">
+            </div>
+            
+        </form>
+    </div>
+</div>
+{% endblock body %}

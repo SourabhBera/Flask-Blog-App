@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='css/account.css') }}" rel="stylesheet">
+{% endblock css %}
+
+{% block body %}
+<div class="cont">
+    <div class="details">
+        <div class="media">
+            <img src="{{ image_file }}" class="rounded float-start " width="170" height="170" style="margin-right: 30px;">
+            <div class="media-body">
+                <h1 class="head1">Name: {{ current_user.name }}</h1>
+                <h2 class="head2">Email Id: {{ current_user.email }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="registerbody">
+    <div class="wrapper">
+        <h2>Update Account Info</h2>
+        <form action="/updateaccount" method="post" enctype="multipart/form-data">
+            {{form.csrf_token }}
+
+            <div class="input-box">
+                {{form.name.label(class="form-label") }}
+                
+                {% if form.name.errors %}
+                    {{form.name(class='is-invalid')}}
+                    <div class="invalid-feedback" style="font-size: 13px;">
+                        {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{form.name(class="form-control")}}
+                {% endif %}
+            </div>
+
+            <div class="input-box">
+                {{form.email.label(class="form-label") }}
+
+                {% if form.email.errors %}
+                    {{form.email(class='is-invalid')}}
+                    <div class="invalid-feedback" style="font-size: 13px;">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{form.email(class="form-control")}}
+                {% endif %}
+            </div>
+
+            <div >
+                {{form.user_image.label(class="form-label") }}
+                {{form.user_image(class="form-control-file") }}
+
+                {% if form.user_image.errors %}
+                        {% for error in form.user_image.errors %}
+                            <span class="text-danger">{{ error }}</span><br>
+                        {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="input-box button" style="margin-top:17px; margin-bottom: 30px;">
+                <input type="Submit" value="Register Now">
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock body %}

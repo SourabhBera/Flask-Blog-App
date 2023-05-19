@@ -1,0 +1,79 @@
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+}
+.card{
+    margin-right:65px;
+    margin-top:20px;
+    margin-bottom:60px;
+    width: 18rem;
+    border-radius: 16px;
+}
+
+.card-img-top{
+    margin-top: 10px;
+    border-bottom-left-radius: var(--bs-card-inner-border-radius);
+    border-bottom-right-radius: var(--bs-card-inner-border-radius);
+    padding: 10px;
+    border-radius: 19px;
+}
+
+.card-title{
+    font-family: Poppins;
+    font-size: 18px;
+    word-spacing: 3px;
+    line-height: 1.5;
+}  
+
+.card-body{
+    padding-bottom: 30px;
+}
+
+.row{
+    justify-content: center;
+}
+
+#selected-page{
+    color: black;
+    background-color: #FF6969;
+}
+
+.home-main{
+    margin-top:-30px;
+    margin-bottom:110px; 
+    background-color: #B9EDDD;
+    height: 800px;
+}
+
+.home-main > h1{
+    position: absolute;
+    font-size: 95px;
+    font-family: 'Times New Roman', Times, serif;
+    float: left;
+    top:300px;
+    margin-left: 125px;
+}
+
+.home-image > .vector-img{
+    height: 500px;
+    width: 500px;
+    float: right;
+    margin-top: 50px;
+    margin-right:95px;
+}
+
+.caption{
+    font-size: 19px;
+    top: 390px;
+    position: relative;
+    margin-left: 125px;
+    font-family:Helvetica;
+}
+
+.latestblogs{
+    text-align: center;
+    font-size: 40px;
+    font-family:Verdana, sans-serif;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-weight: 520;
+}

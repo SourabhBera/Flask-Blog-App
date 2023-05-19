@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block css %}
+<link href="{{ url_for('static', filename='css/error_handler.css') }}" rel="stylesheet">
+{% endblock css %}
+{% block body %}
+    <div class="container_error403">
+        <img src="{{ image_403 }}" class="img403"> 
+    </div>
+    <h3 class="text_403">Page Not Found</h3>
+
+
+{% endblock body %}
