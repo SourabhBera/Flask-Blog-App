@@ -1,6 +1,107 @@
 {% extends "layout.html" %}
+{% block css %}
+<link href="{{ url_for('static', filename='css/about.css') }}" rel="stylesheet">
+  
+{% endblock css %}
 {% block body %}
-    <h3>About Page</h3>
 
+<!-- <div class="container">
+    <h1 class="name"> Sourabh Bera</h1>
+    
+    <div class="profile-img">
+        <img src="{{ profle_pic }}" class="img-fluid" alt="..." width="30%" style="float: right; border-radius:15px;">
+    </div>
+</div> -->
+
+
+<section>
+    <h1>Welcome to my website !! </h1><br>
+    <p style="bottom:20px; position: absolute;">Scroll Down &#8595;</p>
+  </section>
+
+  
+  <section>
+    <div class="container reveal fade-left">
+
+      <div class="text-container">
+        <div class="text-box" id="name">
+          <h1 style="font-family: 'Times New Roman', Times, serif;font-size: 5.7rem; margin-bottom:40px;">Sourabh Bera</h1> 
+          <!-- <p> Email Id: sourabhbera86@gmail.com</p>
+          <p> GitHub: SourabhBera</p>
+          <p> linkedin: <a href="https://www.linkedin.com/in/sourabh-bera/" target="_blank">SourabhBera</a> </p> -->
+        </div>
+        <div class="text-box">
+            <img src="{{ profle_pic }}" class="img-fluid" alt="..." width="30%" style="float: right; border-radius:15px; margin-right: 75px;">
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="container reveal fade-right">
+      <h2>Details</h2>
+      <div class="text-container">
+        <div class="text-box" style="width:1150px; margin-left:85px;">
+          <p>
+            I am currently a third-year student pursuing a Bachelor of Engineering 
+            in Information Technology from Terna Engineering College, Navi-Mumbai. <br><br>
+            As an aspiring IT professional, Everyday I am even more excited to delve deeper into advanced IT topics than yesterday, such as artificial intelligence, cloud computing, and cybersecurity. 
+            I am keen to explore how these emerging technologies can revolutionize industries and enhance the way we live, work, and connect with one another and trying to gain knowledge about them and how to use them in for my benifits.<br><br>
+            I have actively participated in group projects, where I have honed my communication and problem-solving skills while working alongside diverse teams. These experiences have not only broadened my perspective 
+            but also helped me to learn someting new everyday.
+          </p>
+        </div>     
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal fade-bottom" style="color: white;">
+      <h2 style="position:inherit; top:-100px;">contact details</h2>
+      <div class="text-container" style="justify-content: center; position:inherit; top:-70px;">
+        <div class="text-box" style="padding-right: 140px;">
+            <h3 style="margin-bottom: 40px;">Personal</h3>
+            <p>
+                Email Id: &nbsp;sourabhbera86@gmail.com <br>
+                Phone No: &nbsp;+91 99879322745
+            </p>
+
+        </div>
+
+        <div class="text-box">
+    
+            <h3 style="margin-bottom: 40px;">Social</h3>
+            <p>
+                Linkedin:&nbsp; <a href="https://www.linkedin.com/in/sourabh-bera/" target="_blank">sourabh-bera</a> <br>
+                GitHub:&nbsp; <a href="https://github.com/SourabhBera" target="_blank">SourabhBera</a>
+            </p>
+        </div>
+
+        
+      </div>
+    </div>
+  </section> 
+
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+      
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+      
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+      
+      window.addEventListener("scroll", reveal);
+
+</script>
 
 {% endblock body %}

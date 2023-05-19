@@ -20,7 +20,8 @@ def home():
 
 @main.route("/about")
 def about():
-    return render_template('about.html', title='About')
+    profle_pic = url_for('static', filename='profile_pics/Profile.jpg')
+    return render_template('about.html', title='About', profle_pic=profle_pic)
 
 
 @main.route("/search", methods=('GET', 'POST'))
