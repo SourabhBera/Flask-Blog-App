@@ -6,7 +6,7 @@
     <p class="caption">Get Inspired, Get Motivated, Get Blogging with Us.</p>
     
     <div class="home-image">
-        <img src="{{ vector2 }}" alt="" class="vector-img">
+        <img src="{{ vector3 }}" alt="" class="vector-img">
     </div>
 </div> 
 
@@ -18,7 +18,7 @@
     <div class="row">
         {% for post in posts.items %}
         <div class="card" style="width: 21rem;">
-            <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+            <img src="{{post.blog_image}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p>By <a href="{{ url_for('users.user_profile', name=post.author.name) }}">{{ post.author.name }}</a>,   {{ post.date_posted.strftime('%d-%m-%y') }}</p>

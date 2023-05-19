@@ -59,7 +59,7 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable=False )
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow )
     content = db.Column(db.Text, nullable=False)
-    blog_image = db.Column(db.String(20), default='default_blog.jpg')
+    blog_image = db.Column(db.String(20), default="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     
     def __repr__(self):

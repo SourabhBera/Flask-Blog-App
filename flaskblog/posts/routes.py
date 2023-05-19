@@ -1,10 +1,12 @@
 import base64
-from flask import (render_template, url_for, flash, redirect, request, abort, Blueprint)
+import os
+from flask import (app, render_template, url_for, flash, redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from flaskblog import db
 from flaskblog.models import Post
 from flaskblog.posts.forms import NewBlogForm, UpdateBlogForm
 from flaskblog.posts.utils import save_blog_image
+from werkzeug.utils import secure_filename
 
 posts = Blueprint('posts', __name__)
 
@@ -13,9 +15,14 @@ posts = Blueprint('posts', __name__)
 def new_blog_post():
     form = NewBlogForm()
 
-    if form.validate_on_submit():
+    if form.blog_image.data:
+        file = request.files[form.blog_image.name]
+        filename = secure_filename(file.filename)
+        file_path = str('/static/blog_images/'+filename)
+        file.save(os.path.join('flaskblog\\static\\blog_images', filename))
 
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, content=form.content.data, author=current_user, blog_image=file_path)
         db.session.add(post)
         db.session.commit()
         flash(f'Your blog has been posted successfully!', 'success')
@@ -40,9 +47,19 @@ def update_blog(post_id):
     if post.author != current_user:
         abort(403)
     form = UpdateBlogForm()
+
+    if form.blog_image.data:
+        file = request.files[form.blog_image.name]
+        filename = secure_filename(file.filename)
+        file_path = str('/static/blog_images/'+filename)
+        file.save(os.path.join('flaskblog\\static\\blog_images', filename))
+
     if form.validate_on_submit():
         post.title = form.title.data
         post.content = form.content.data
+        print(file_path)
+        post.blog_image=file_path
+        
         db.session.commit()
         flash(f'Your Blog has been updated!', 'success')
         return redirect(url_for('posts.view_blog', post_id=post.id))
@@ -50,6 +67,7 @@ def update_blog(post_id):
     elif request.method == 'GET':
         form.title.data = post.title
         form.content.data = post.content
+
 
     return render_template('update_blog.html', title='Update Blog', form=form, post_id=post_id)
 

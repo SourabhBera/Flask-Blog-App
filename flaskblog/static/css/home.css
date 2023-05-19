@@ -61,14 +61,6 @@
     margin-right:95px;
 }
 
-.caption{
-    font-size: 19px;
-    top: 390px;
-    position: relative;
-    margin-left: 125px;
-    font-family:Helvetica;
-}
-
 .latestblogs{
     text-align: center;
     font-size: 40px;
@@ -76,4 +68,25 @@
     margin-top: 40px;
     margin-bottom: 60px;
     font-weight: 520;
+}
+
+.caption{
+    font-size: 19px;
+    top: 390px;
+    position: relative;
+    margin-left: 125px;
+    font-family:Helvetica;
+    width: 42ch;
+    animation: type 5.5s steps(41), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 5px solid;
+}
+
+@keyframes type{
+    from{width: 0%}
+}
+  
+@keyframes blink{
+    50%{border-color: transparent}
 }

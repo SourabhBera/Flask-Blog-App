@@ -11,8 +11,8 @@
         <h1 class="blogheading">{{ post.title }}</h1>
         <span class="blogauthor"> Author: <a href="{{ url_for('users.user_profile', name=post.author.name) }}"> {{post.author.name}}</a> </span> <br>
         <span style="margin-left: 30px;">Posted on {{post.date_posted.strftime('%d-%m-%y') }}</span> <br>
-        <div class="container" style="justify-content: center; display:flex; margin-top:40px; margin-bottom:40px;">
-            <img src="https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2023/03/720/405/ChatGPT.jpg?ve=1&tl=1" width="780" height="470">
+        <div class="img-container" >
+            <img src="{{ post.blog_image }}" width="780" height="470">
         </div>
         <div class="blogcontent" style="word-wrap: break-word;white-space: pre-wrap; display:flex;">{{ post.content }}</div>
     </section>

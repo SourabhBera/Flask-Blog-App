@@ -13,7 +13,8 @@ def home():
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=6)
     vector1 = url_for('static', filename='profile_pics/vector1.jpg')
     vector2 = url_for('static', filename='profile_pics/vector2.png')
-    return render_template('home.html', posts = posts, vector1=vector1, vector2=vector2)
+    vector3 = url_for('static', filename='profile_pics/vector3.png')
+    return render_template('home.html', posts = posts, vector1=vector1, vector2=vector2, vector3=vector3)
 
 
 

@@ -1,13 +1,16 @@
 {% extends "layout.html" %}
+
 {% block css %}
 <link href="{{ url_for('static', filename='css/new_blog_post.css') }}" rel="stylesheet">
 {% endblock css %}
-{% block body %}
-<div class="d-flex align-items-center justify-content-center">
-    <div class="wrap" style="padding:20px; margin:20px; width:700px;">
-        <h2 style="text-align: center; margin-bottom: 45px;">Update Blog</h2>
 
-        <form action="/viewblog/update/{{ post_id }}" method="post">
+{% block body %}
+
+<div class="d-flex align-items-center justify-content-center">
+    <div class="wrap">
+        <h2 class="header" >UPDATE BLOG</h2>
+
+        <form action="/viewblog/update/{{ post_id }}" method="post" enctype="multipart/form-data">
             {{form.csrf_token }}
 
             <div class="mb-5">
@@ -38,6 +41,17 @@
                 </div><br><br>
                 {% else %}
                 {{form.content (class="form-control2")}}
+                {% endif %}
+            </div>
+
+            <div class="form-file">
+                {{form.blog_image.label(class="form-label" ) }} <br>
+                {{form.blog_image(class="form-control-file") }}
+
+                {% if form.blog_image.errors %}
+                        {% for error in form.blog_image.errors %}
+                            <span class="text-danger">{{ error }}</span><br>
+                        {% endfor %}
                 {% endif %}
             </div>
 
