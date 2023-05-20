@@ -19,7 +19,7 @@
 
     {% if current_user.name == post.author.name %}
     <div class="delupdate">
-        <a href="{{ url_for('posts.update_blog', post_id=post.id)}}" class="btn btn-dark btn " style="margin-right: 30px; margin-left: 7px;">Update</a>
+        <a href="{{ url_for('posts.update_blog', post_id=post.id)}}" class="btn btn-dark btn " style="margin-right: 20px; margin-left: 30px;">Update</a>
         <button type="button" class="btn btn-danger btn m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
 
         <!-- Modal -->
