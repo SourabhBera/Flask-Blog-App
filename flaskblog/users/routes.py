@@ -51,7 +51,13 @@ def logout():
 def account():
     image_file = url_for('static', filename='profile_pics/default.jpg' )
     posts = Post.query.all()
-    return render_template('account.html', title='Account', image_file=image_file, posts=posts)
+    posts_list = []
+    for post in posts:
+        if current_user.name == post.author.name:
+            posts_list.append(post)
+
+    print(len(posts_list))
+    return render_template('account.html', title='Account', image_file=image_file, posts_list=posts_list)
 
 
 
