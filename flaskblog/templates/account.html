@@ -6,16 +6,16 @@
 
 {% block body %}
 <div class="container"> 
-
-    <div class="main-container" id="main-contanier">
-        <div class="container-media">
-            <img src="{{ image_file }}" class="rounded float-start img-fluid" id="profile-img" alt="profile picture" >
-            <div>
-                <h1 class="headname" > Hello <br>{{ current_user.name}}</h1>
+    <section>
+        <div class="main-container" id="main-contanier">
+            <div class="container-media">
+                <img src="{{ image_file }}" class="rounded float-start img-fluid" id="profile-img" alt="profile picture" >
+                <div>
+                    <h1 class="headname" > Hello ! <br>{{ current_user.name}}</h1>
+                </div>
             </div>
         </div>
-    </div>
-
+    </section>
     <div class="details-container" >
         <table class="styled-table">
             <thead>
@@ -32,38 +32,40 @@
                     
                 
                 {% for post in posts %}
-                    {% if current_user.name == post.author.name %}
                     
-                    <tr>
-                        <td style="padding-left: 40px; padding-right:40px;">#</td>
-                        <td style="padding-left: 30px; padding-right:30px; "><a href="{{ url_for('posts.view_blog', post_id=post.id)}}"  class="blogname">{{ post.title }} </a></td>
-                        <td style="padding-left: 40px; padding-right:40px;">{{ post.date_posted.strftime('%d-%m-%y') }}</td>
-                        <td style="padding-left: 40px; padding-right:40px;">#</td>
-                        <td style="padding-left: 15px; padding-right:15px;">
-                            <a href="{{ url_for('posts.update_blog', post_id=post.id)}}" class="btn btn-dark btn-sm " style="margin-right:15px;">Update</a>
-                            <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+                    {% if current_user.name == post.author.name %} 
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Post?</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <tr>
+                            <td style="padding-left: 40px; padding-right:40px;">0</td>
+                            <td style="padding-left: 30px; padding-right:30px; "><a href="{{ url_for('posts.view_blog', post_id=post.id)}}"  class="blogname">{{ post.title }} </a></td>
+                            <td style="padding-left: 40px; padding-right:40px;">{{ post.date_posted.strftime('%d-%m-%y') }}</td>
+                            <td style="padding-left: 40px; padding-right:40px;">#</td>
+                            <td style="padding-left: 15px; padding-right:15px;">
+                                <a href="{{ url_for('posts.update_blog', post_id=post.id)}}" class="btn btn-dark btn-sm " style="margin-right:15px;">Update</a>
+                                <button type="button" class="btn btn-danger btn-sm m-1" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Post?</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <form action="{{ url_for('posts.delete_blog', post_id=post.id )}}" method="POST">
+                                            <input type="submit" class="btn btn-danger" value="Delete">
+                                        </form>
+                                        </div>
                                     </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <form action="{{ url_for('posts.delete_blog', post_id=post.id )}}" method="POST">
-                                        <input type="submit" class="btn btn-danger" value="Delete">
-                                    </form>
                                     </div>
                                 </div>
-                                </div>
-                            </div>
 
-                        </td>
-                    </tr>
-                    {% endif %}
+                            </td>
+                        </tr>
+                    
+                        {% endif %}       
                 {% endfor %}
             </tbody>
         </table>
