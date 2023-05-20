@@ -5,7 +5,7 @@ from flask_login import current_user, login_required
 from flaskblog import db
 from flaskblog.models import Post
 from flaskblog.posts.forms import NewBlogForm, UpdateBlogForm
-from flaskblog.posts.utils import save_blog_image
+from flaskblog.posts.utils import convertToBinaryData
 from werkzeug.utils import secure_filename
 
 posts = Blueprint('posts', __name__)
@@ -53,6 +53,9 @@ def update_blog(post_id):
         filename = secure_filename(file.filename)
         file_path = str('/static/blog_images/'+filename)
         file.save(os.path.join('flaskblog\\static\\blog_images', filename))
+        
+        new_file = convertToBinaryData(file)
+        print(new_file ,'/n')
 
     if form.validate_on_submit():
         post.title = form.title.data
