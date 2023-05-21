@@ -21,7 +21,7 @@ def save_user_image(form_picture):
 
 def send_reset_email(user):
     token = user.get_reset_token()
-    full_link = "http://127.0.0.1:8000" + url_for('users.reset_password', user=user, token=token)
+    full_link = "https://bloggers-vbvs.onrender.com/" + url_for('users.reset_password', user=user, token=token)
     user_email = str(user.email)
     
     msg = Message()
