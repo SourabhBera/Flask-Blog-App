@@ -62,7 +62,7 @@ def account():
 
 
 @users.route("/updateaccount",methods=('GET', 'POST'))
-@login_required
+# @login_required
 def updateaccount():
     form = UpdateUserForm()
     if form.validate_on_submit():
