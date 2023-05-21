@@ -4,8 +4,6 @@ from PIL import Image
 from flask import url_for, current_app
 from flask_mail import Message
 from flaskblog import mail
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
 def save_user_image(form_picture):
     random_hex = secrets.token_hex(8)

@@ -4,7 +4,6 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
 from flaskblog.config import Config
-from pymongo.mongo_client import MongoClient
 
 
 db = SQLAlchemy()
