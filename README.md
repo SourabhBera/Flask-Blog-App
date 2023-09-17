@@ -122,7 +122,7 @@ Latest Blogs
 <br> 
 
 Register Page
-![Register Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/register.png)
+![Register Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/register_page.png)
 <br> 
 
 Login Page
