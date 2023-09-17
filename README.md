@@ -1,6 +1,6 @@
 # Bloggers! - A Python Flask Blogging App
 
-Bloggers! is a simple and elegant blogging web application built with Python Flask. It allows users to create, read, update, and delete blog posts. The app is currently hosted on Render.com, and you can access it [here](https://bloggers-vbvs.onrender.com/). Get Inspired, Get Motivated, Get Blogging with Us.
+Bloggers! is a simple and elegant blogging web application built with Python Flask. It allows users to create, read, update, and delete blog posts. The app is currently hosted on Render.com, and you can access it [here](https://bloggers-vbvs.onrender.com/). Get Inspired, Get Motivated, Get Blogging with Us!
 <br>   
 
 ## Table of Contents
@@ -113,30 +113,46 @@ To deploy this app on your preferred hosting platform, follow the deployment ins
 
 
 ## <a name="screenshots">Screenshots</a>
-Start the server
-![Start the server](https://github.com/SourabhBera/Python-Peer-to-Peer-chat-app-with-file-transfer/blob/1dae80ee41a7097ce13f4d6804dd943f5ab6a215/screenshots/Screenshot%202023-08-21%20183318.png)
-
+Home Page
+![Home Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/home_page.png)
 <br> 
 
-Connect the client to the server's IP
-![Connect the client to the server's IP](https://github.com/SourabhBera/Python-Peer-to-Peer-chat-app-with-file-transfer/blob/1dae80ee41a7097ce13f4d6804dd943f5ab6a215/screenshots/Screenshot%202023-08-21%20183440.png)
-
+Latest Blogs 
+![Latest Blogs](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/latestblogs.png)
 <br> 
 
-See the maual using `!get_manual` command
-![See the maual](https://github.com/SourabhBera/Python-Peer-to-Peer-chat-app-with-file-transfer/blob/1dae80ee41a7097ce13f4d6804dd943f5ab6a215/screenshots/Screenshot%202023-08-21%20183732.png)
-
+Register Page
+![Register Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/register.png)
 <br> 
 
-Send a file to the server using `!send_file` command
-![Send a file to the server](https://github.com/SourabhBera/Python-Peer-to-Peer-chat-app-with-file-transfer/blob/1dae80ee41a7097ce13f4d6804dd943f5ab6a215/screenshots/Screenshot%202023-08-21%20183913.png)
-
+Login Page
+![Login Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/login_page.png)
 <br> 
 
-The file is then saved in the same directory where the server file is located.
-![The file is then saved in the same directory](https://github.com/SourabhBera/Python-Peer-to-Peer-chat-app-with-file-transfer/blob/1dae80ee41a7097ce13f4d6804dd943f5ab6a215/screenshots/Screenshot%202023-08-21%20183938.png)
+Reset Password Page
+![Reset Password Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/reset_password_page.png)
+<br> 
 
-<br>   
+View Blog Page 1
+![View Blog Page 1](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/view_blog1.png)
+<br> 
+
+View Blog Page 2
+![View Blog Page 2](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/view_blog2.png)
+<br> 
+
+User Dashboard Page 1
+![User Dashboard Page 1](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/user_dashboard1.png)
+<br> 
+
+User Dashboard Page 2
+![User Dashboard Page 1](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/user_dashboard2.png)
+<br> 
+
+Create New Blog Page
+![Create New Blog Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/create_new_blog_page.png)
+<br> 
+  
 
 
 ## <a name="contributing">Contributing</a>
@@ -153,7 +169,4 @@ This project is licensed under the MIT License [![License](https://img.shields.i
 ---  
 <br>   
 
-Feel free to reach out with any questions or feedback. Happy chatting and file sharing with the P2P Chat App!
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Feel free to reach out to us with any questions or feedback. Happy chatting and file sharing with the P2P Chat App!
+Feel free to reach out to us with any questions or feedback. Get Inspired, Get Motivated, Get Blogging with Us!
