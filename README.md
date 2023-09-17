@@ -113,64 +113,64 @@ To deploy this app on your preferred hosting platform, follow the deployment ins
 
 
 ## <a name="screenshots">Screenshots</a>
-#### Home Page
+### Home Page
 
 ![Home Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/home_page.png)
-
+<br>
 <br> 
 
-#### Latest Blogs 
+### Latest Blogs 
 
 ![Latest Blogs](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/latestblogs.png)
-
+<br>
 <br> 
 
-#### Register Page
+### Register Page
 
 ![Register Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/register_page.png)
-
+<br>
 <br> 
 
-#### Login Page
+### Login Page
 
 ![Login Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/login_page.png)
-
+<br>
 <br> 
 
-#### Reset Password Page
+### Reset Password Page
 
 ![Reset Password Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/reset_password_page.png)
-
+<br>
 <br> 
 
-#### View Blog Page 1
+### View Blog Page 1
 
 ![View Blog Page 1](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/view_blog1.png)
-
+<br>
 <br> 
 
-#### View Blog Page 2
+### View Blog Page 2
 
 ![View Blog Page 2](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/view_blog2.png)
-
+<br>
 <br> 
 
-#### User Dashboard Page 1
+### User Dashboard Page 1
 
 ![User Dashboard Page 1](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/user_dashboard1.png)
-
+<br>
 <br> 
 
-#### User Dashboard Page 2
+### User Dashboard Page 2
 
 ![User Dashboard Page 1](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/user_dashboard2.png)
-
+<br>
 <br> 
 
-#### Create New Blog Page
+### Create New Blog Page
 
 ![Create New Blog Page](https://github.com/SourabhBera/Flask-Blog-App/blob/5f1b15160b2bd36cbcf294df3e99a1dba87d29cf/screenshots/create_new_blog_page.png)
-
+<br>
 <br> 
   
 
